@@ -1,15 +1,15 @@
 #========= создания папки для dwm =========
-mkdir ~/dwm
-cd ~/dwm
-
+mkdir ~/wm
+cd ~/wm
 #========= клонирования репозиториев ==========
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/slstatus
-git clone https://github.com/BiBo6613/My-Configs.git
 #========= установка конфигов ==========
-cd ~/dwm/dwm
-rm -f config.h
-cd ../My-Configs/dwm_config
-mv config.h ../../dwm/dwm/
-
+cp ~/My-Configs/dwm_config/config.h ~/wm/dwm/
+cp ~/My-Configs/dwm_config/start_dwm.sh ~/wm
+chmod +x ~/wm/start_dwm.sh
+cd ~/wm/dwm/
+sudo make clean install
+cd ../dmenu
+sudo make clean install
