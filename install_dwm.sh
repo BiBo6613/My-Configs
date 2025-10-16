@@ -1,3 +1,5 @@
+#========= установка покетов =========
+sudo pacman -S git kitty firefox
 #========= создания папки для dwm =========
 mkdir ~/wm
 cd ~/wm
@@ -13,7 +15,17 @@ cd ~/wm/dwm/
 sudo make clean install
 cd ../dmenu
 sudo make clean install
+#========= установка обоев =========
 mkdir ~/wm/wallpapers
 cp ~/My-Configs/wallpapers/* ~/wm/wallpapers/
 chmod +x ~/wm/wallpapers/feh_config.sh
-
+cd ~
+#========= клонирования репозитория aur ========
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+#========= установка конфига kitty ========
+mkdir ~/.config/kitty/
+cp ~/My-Configs/dwm_config/kitty.conf ~/.config/kitty/dwm_config
+#========= установка xinitrc =========
+cp ~/My-Configs/dwm_config/.xinitrc ~/.xinitrc

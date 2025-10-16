@@ -11,7 +11,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#0d759e";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -28,7 +28,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "kitty",    NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -62,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *wallpaper[] = { "/home/nellmaxo/wm/wallpapers/feh_configs.sh", NULL };
 static const char *chromium[] = { "firefox", NULL };
+static const char *flameshot[] = { "flameshot", "gui", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -88,8 +90,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-        { 0,                            XK_F9,     spawn,          {.v = wallpaper } },
-        { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = chromium } },	
+    { 0,                            XK_F9,     spawn,          {.v = wallpaper } },
+    { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = chromium } },
+	{ 0,                            XK_Print,  spawn,          {.v = flameshot} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
