@@ -13,3 +13,7 @@ cd ~/wm/dwm/
 sudo make clean install
 cd ../dmenu
 sudo make clean install
+mkdir ~/wm/wallpapers
+cp ~/My-Configs/wallpapers/* ~/wm/wallpapers/
+chmod +x ~/wm/wallpapers/feh_config.sh
+
