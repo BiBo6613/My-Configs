@@ -12,6 +12,8 @@ cp ~/My-Configs/dwm_config/config.h ~/wm/dwm/
 cp ~/My-Configs/dwm_config/start_dwm.sh ~/wm
 chmod +x ~/wm/start_dwm.sh
 cd ~/wm/dwm/
+wget https://dwm.suckless.org/patches/center/dwm-center-6.2.diff
+patch < dwm-center-6.2.diff
 sudo make clean install
 cd ../dmenu
 sudo make clean install
