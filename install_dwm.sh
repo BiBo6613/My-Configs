@@ -1,5 +1,5 @@
 #========= установка покетов =========
-sudo pacman -S git kitty firefox
+sudo pacman -S git kitty firefox ttf-font-awesome ttf-dejavu feh
 #========= создания папки для dwm =========
 mkdir ~/wm
 cd ~/wm
